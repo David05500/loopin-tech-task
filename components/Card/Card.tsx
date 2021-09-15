@@ -35,12 +35,6 @@ export const Card: React.FC<CardProps> = ({
                 img2Alt = "Positive Face"
                 description = "This squad is feeling great"
                 break;
-            default:
-                img1src = img1src 
-                img1Alt = img1Alt
-                img2src = img2src 
-                img2Alt = img2Alt
-                break;
         }
     }
 

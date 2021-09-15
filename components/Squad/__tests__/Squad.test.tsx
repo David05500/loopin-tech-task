@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { cleanup, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Squad } from '../Squad'
 
 const squads = [
@@ -30,15 +30,15 @@ const squads = [
         members: [
             {
                 name: "Harley Quinn",
-                moodPercentage: 20,
+                moodPercentage: 49,
             },
             {
                 name: "Bloodsport",
-                moodPercentage: 10,
+                moodPercentage: 48,
             },
             {
                 name: "Peacemaker",
-                moodPercentage: 8,
+                moodPercentage: 47,
             },
         ],
     },
@@ -49,27 +49,22 @@ const squads = [
         members: [
             {
                 name: "Tony Stark",
-                moodPercentage: 61,
+                moodPercentage: 0,
             },
             {
                 name: "Bruce Banner",
-                moodPercentage: 62,
+                moodPercentage: 0,
             },
             {
                 name: "Peter Parker",
-                moodPercentage: 63,
+                moodPercentage: 5,
             },
         ],
     },
 ]
 
 describe("Squad", () => {
-    afterEach(() => {
-        jest.resetModules();
-        cleanup();
-    })
-
-    it("should render right amount of input data", () => {
+    it("should render right amount of squads with correct state variant", () => {
         render(
             <div>
                 {squads.map(squad =>
@@ -83,7 +78,9 @@ describe("Squad", () => {
 
         squads.forEach((e, i) => {
             expect(screen.getByText(`${e.name}`)).toBeDefined();
-
         });
+        expect(screen.getByText("This squad is not feeling great")).toBeDefined();
+        expect(screen.getByText("This squad is feeling great")).toBeDefined();
+        expect(screen.getByText("This squad is feeling low")).toBeDefined();
     });
 });

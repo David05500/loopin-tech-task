@@ -9,7 +9,9 @@ describe("Card", () => {
 			<CardStory
 				title="Card Title"
 				description="Card Description"
-			/>)
+			/>
+		)
 		expect(screen.getByText('Card Description')).toBeDefined();
+		expect(screen.getByText('Card Title')).toBeDefined();
 	});
 });
