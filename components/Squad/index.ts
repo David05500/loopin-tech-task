@@ -1,2 +1,2 @@
 export * from './Squad'
-export type {SquadPropsData, SquadProps, SquadServerData} from './types'
+export {SquadPropsData, SquadProps, SquadServerData} from './types'

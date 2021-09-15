@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'next/image'
 import { CardProps } from './types'
 
@@ -35,10 +36,10 @@ export const Card: React.FC<CardProps> = ({
                 description="This squad is feeling great"
                 break;
             default:
-                img1src = img1src || 'https://via.placeholder.com/374x131.png?text=image'
-                img1Alt = img1Alt || ''
-                img2src = img2src || 'https://via.placeholder.com/374x131.png?text=image'
-                img2Alt = img2Alt || ''
+                img1src = img1src 
+                img1Alt = img1Alt
+                img2src = img2src 
+                img2Alt = img2Alt
                 break;
         }
     }
@@ -47,15 +48,15 @@ export const Card: React.FC<CardProps> = ({
         <div className="shadow-lg hover:shadow-xl h-full w-full bg-white  border rounded-md border-borderColor">
             <div className="relative w-full h-2/5 p-3 md:p-6 h-[110px] md:h-[131px]">
                 <Image
-                    src={img1src}
-                    alt={img1Alt}
+                    src={img1src ? img1src : 'https://via.placeholder.com/374x131.png?text=image'}
+                    alt={img1Alt ? img1Alt : ''}
                     layout="fill"
                     objectFit="cover"
                     objectPosition="center"
                 />
                 <Image
-                    src={img2src}
-                    alt={img2Alt}
+                    src={img2src ? img2src : 'https://via.placeholder.com/374x131.png?text=image'}
+                    alt={img2Alt ? img1Alt : ''}
                     className="opacity-50"
                     layout="fill"
                     objectFit="cover"
