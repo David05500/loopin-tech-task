@@ -7,6 +7,6 @@ export interface CardProps {
     img2src?: string,
     img2Alt?: string,
     title: string,
-    description: string,
+    description?: string,
 }
 
