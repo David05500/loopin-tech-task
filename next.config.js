@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-  reactStrictMode: true,
-}
+const withImages = require("next-images");
+
+module.exports = withImages({
+    images: {
+        domains: ['via.placeholder.com']
+    },
+    reactStrictMode: true,
+
+    webpack(config, options) {
+        return config;
+    }
+});
