@@ -1,4 +1,4 @@
-export type CardVariant = 'primary' | 'negative' | 'neutrial' | 'positive'
+export type CardVariant = 'primary' | 'negative' | 'neutral' | 'positive'
 
 export interface CardProps {
     variant?: CardVariant,

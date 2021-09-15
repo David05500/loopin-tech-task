@@ -1,4 +1,3 @@
-/* eslint no-console: 0 */
 import React from 'react';
 import { Card } from "../Card"
 import { ComponentStory, ComponentMeta } from '@storybook/react';
