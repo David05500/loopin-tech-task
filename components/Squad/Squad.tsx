@@ -1,8 +1,6 @@
 import React from 'react';
-import Image from 'next/image'
 import { Card, CardVariant } from "../Card"
-import { SquadPropsData, SquadProps } from './types'
-
+import { SquadProps } from './types'
 
 export const Squad: React.FC<SquadProps> = ({ squad }) => {
     const squadStateValue = Math.round(squad.members.reduce((total, val) => total + val.moodPercentage, 0) / squad.members.length)

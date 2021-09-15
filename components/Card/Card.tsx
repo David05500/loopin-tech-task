@@ -19,21 +19,21 @@ export const Card: React.FC<CardProps> = ({
                 img1Alt = "Negative Gradient"
                 img2src = "/negative-face.svg"
                 img2Alt = "Negative Face"
-                description = "This squad is not feeling great"
+                description = description || "This squad is not feeling great"
                 break;
             case 'neutral':
                 img1src = "/neutral-gradient.svg"
                 img1Alt = "Neutral Gradient"
                 img2src = "/neutral-face.svg"
                 img2Alt = "Neutral Face"
-                description = "This squad is feeling low"
+                description = description || "This squad is feeling low"
                 break;
             case 'positive':
                 img1src = "/positive-gradient.svg"
                 img1Alt = "Positive Gradient"
                 img2src = "/positive-face.svg"
                 img2Alt = "Positive Face"
-                description = "This squad is feeling great"
+                description = description || "This squad is feeling great"
                 break;
         }
     }

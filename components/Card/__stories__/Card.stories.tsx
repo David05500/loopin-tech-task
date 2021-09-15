@@ -1,23 +1,14 @@
 import React from 'react';
 import { Card } from "../Card"
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'ui/Card',
 	component: Card,
 };
 
-export const Default: ComponentStory<typeof Card> = (args) => (
-	<Card
-		{...args}
-		img1src='https://via.placeholder.com/374x131.png?text=image'
-		img1Alt="Image 1 alt"
-		img2src='https://via.placeholder.com/374x131.png?text=image'
-		img2Alt="Image 2 alt"
-		title="Card Title"
-		description="Card Description"
-	>
-
+const Default: ComponentStory<typeof Card> = (args) => (
+	<Card {...args}>
 		<div className="flex flex-col">
 			<div className="text-xl mb-4 font-bold">
 				Card sub-title
@@ -39,6 +30,35 @@ export const Default: ComponentStory<typeof Card> = (args) => (
 				action button
 			</button>
 		</div>
-
 	</Card>
 );
+
+export const Primary = Default.bind({})
+Primary.args = {
+	title: "Primary Card",
+	description: "Primary Card Description",
+	variant: "primary",
+	img1src: 'https://via.placeholder.com/374x131.png?text=image',
+	img1Alt: "Image 1 alt",
+	img2src: 'https://via.placeholder.com/374x131.png?text=image',
+	img2Alt: "Image 2 alt"
+}
+
+export const Negative = Default.bind({})
+Negative.args = {
+	title: "Negative Card",
+	variant: "negative"
+}
+
+export const Neutral = Default.bind({})
+Neutral.args = {
+	title: "Neutral Card",
+	variant: "neutral"
+}
+
+export const Positive = Default.bind({})
+Positive.args = {
+	title: "Positive Card",
+	description: "Positive Card Description",
+	variant: "positive"
+}

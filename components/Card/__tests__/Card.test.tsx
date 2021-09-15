@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { Default as CardStory } from '../__stories__/Card.stories';
+import { Primary as CardStory } from '../__stories__/Card.stories';
 
 describe("Card", () => {
 	it("should render", () => {
